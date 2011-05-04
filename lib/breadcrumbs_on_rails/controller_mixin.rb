@@ -76,8 +76,8 @@ module BreadcrumbsOnRails
     module InstanceMethods
       protected
 
-      def add_breadcrumb(name, path)
-        self.breadcrumbs << Breadcrumbs::Element.new(name, path)
+      def add_breadcrumb(name, path, options = {})
+        self.breadcrumbs << Breadcrumbs::Element.new(name, path, options)
       end
 
       def breadcrumbs
