@@ -57,12 +57,6 @@ class SimpleBuilderTest < ActionView::TestCase
                      simplebuilder(@template, generate_elements(2)).render)
   end
 
-  def test_render_with_always_link
-    @template.expects(:current_page?).times(0)
-    assert_dom_equal("<a href=\"/element/1\">Element 1</a>",
-                     simplebuilder(@template, generate_elements(1), :always_link => true).render)
-  end
-
   protected
 
     def simplebuilder(*args)

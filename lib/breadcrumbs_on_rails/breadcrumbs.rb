@@ -100,7 +100,7 @@ module BreadcrumbsOnRails
       end
 
       def render_element(element)
-        if @options[:always_link]
+        if element.options[:always_link]
           content = @context.link_to(compute_name(element), compute_path(element))
         else
           content = @context.link_to_unless_current(compute_name(element), compute_path(element))   
@@ -121,11 +121,12 @@ module BreadcrumbsOnRails
     #
     class Element
 
-      attr_accessor :name, :path
+      attr_accessor :name, :path, :options
 
-      def initialize(name, path)
+      def initialize(name, path, options = {})
         self.name = name
         self.path = path
+        self.options = options
       end
 
     end

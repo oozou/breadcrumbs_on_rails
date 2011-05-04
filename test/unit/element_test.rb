@@ -18,6 +18,10 @@ class ElementTest < ActiveSupport::TestCase
     assert_equal :foopath, element.path
   end
 
+  def test_initialize_should_set_options
+    element = BreadcrumbsOnRails::Breadcrumbs::Element.new(nil, nil, {:separator => '=='})
+    assert_equal({ :separator => "==" }, element.options)
+  end
 
   def test_name
     element = BreadcrumbsOnRails::Breadcrumbs::Element.new(nil, nil)
