@@ -80,6 +80,10 @@ module BreadcrumbsOnRails
         self.breadcrumbs << Breadcrumbs::Element.new(name, path, options)
       end
 
+      def pop_breadcrumb
+        self.breadcrumbs.pop
+      end
+
       def breadcrumbs
         @breadcrumbs ||= []
       end
